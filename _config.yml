@@ -1,2 +1,4 @@
 auto: true
-remote-theme: jekyll-theme-slate
+theme: jekyll-theme-slate
+title: Rt 106
+description:
