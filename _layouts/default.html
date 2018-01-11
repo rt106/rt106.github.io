@@ -7,7 +7,8 @@
   <meta name="viewport" content="width=device-width,maximum-scale=2">
   <meta name="description" content="{{ site.title | default: site.github.repository_name }} : {{ site.description | default: site.github.project_tagline }}">
 
-  <link rel="stylesheet" type="text/css" media="screen" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}"> {% seo %}
+  <link rel="stylesheet" type="text/css" media="screen" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+  <link rel="stylesheet" type="text/css" media="screen" href="{{ '/assets/css/rt106_style.css?v=' | append: site.github.build_revision | relative_url }}"> {% seo %}
 </head>
 
 <body>
@@ -18,7 +19,7 @@
       <a id="forkme_banner" href="{{ site.github.owner_url }}">View on GitHub</a>
       <!-- <h1 id="project_title">{{ site.title | default: site.github.repository_name }}</h1> -->
       <h1 id="project_title"><a href="{{ site.url }}"><img src="/assets/rt106_white_150.png" title="Rt 106 Logo" style="border: 0px; box-shadow: 0 0 0px; -webkit-box-shadow: 0 0 0px" align="left"></a></h1>
-      <h4 id="project_tagline">{{ site.description | default: site.github.project_tagline }}</h4> {% if site.show_downloads %}
+      <h2 id="project_tagline">{{ site.description | default: site.github.project_tagline }}</h2> {% if site.show_downloads %}
       <section id="downloads">
         <a class="zip_download_link" href="{{ site.github.zip_url }}">Download this project as a .zip file</a>
         <a class="tar_download_link" href="{{ site.github.tar_url }}">Download this project as a tar.gz file</a>
