@@ -2,3 +2,4 @@ auto: true
 theme: jekyll-theme-slate
 title: Rt 106
 description: A scalable, containerized analytic and application framework for creating interactive web applications around long running (batch style) analytics.
+show_downloads: false
