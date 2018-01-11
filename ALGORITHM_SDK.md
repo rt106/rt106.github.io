@@ -46,8 +46,6 @@ A subset of files from the [rt106-algorithm-sdk](https://github.com/rt106/rt106-
 * rt106SpecificAdaptorCode.py [required]
 * rt106SpecificAdaptorDefinitions.json [required]
 * entrypoint.sh [optional, if no changes are needed from SDK version]
-* rt106GenericAdaptorAMQP.py [optional, if no changes are needed from SDK version]
-* rt106GenericAdaptorREST.py [optional, if no changes are needed from SDK version]
 
 ## 2. Create an algorithm container
 Docker is a pervasive open-source containerization technology.  General documentation for Docker is available from [Docker's website](https://docs.docker.com/).
@@ -57,15 +55,30 @@ This guide describes the specific details of creating your algorithm's Docker co
 Create a Dockerfile to create your Rt 106 Docker container. See the [Docker](https://docs.docker.com/engine/reference/builder/) documentation for general details on Dockerfiles. An example Dockerfile from the [simple region growing](https://github.com/rt106/rt106-simple-region-growing) example algorithm is below:
 
 ```
+# Copyright (c) General Electric Company, 2017.  All rights reserved.
+
 FROM rt106/rt106-algorithm-sdk
 
-ADD simpleRegionGrowing.tar.gz /rt106/bin
+# add the artifacts emitted from the dev container
+ADD rt106-simple-region-growing.tar.gz /rt106/bin
 
-ADD rt106SpecificAdaptorCode.py /rt106/rt106SpecificAdaptorCode.py
-ADD rt106SpecificAdaptorDefinitions.json /rt106/rt106SpecificAdaptorDefinitions.json
+# add the adaptor code specialized for this algorithm
+ADD rt106SpecificAdaptorCode.py rt106SpecificAdaptorDefinitions.json entrypoint.sh /rt106/
 
+# set permissions
+USER root
+RUN chown -R rt106:rt106 /rt106
+
+# set the working directory
 WORKDIR /rt106
 
+# establish user (created in the base image)
+USER rt106:rt106
+
+# configure the default port for an analytic, can be overridden in entrypoint
+EXPOSE 7106
+
+# entry point
 CMD ["/rt106/entrypoint.sh"]
 ```
 A few aspects of the Dockerfile are required:
