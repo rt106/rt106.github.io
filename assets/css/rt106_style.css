@@ -9,3 +9,7 @@
 #project_tagline {
   font-size: 18px;
 }
+
+.clear {
+    clear:both;
+}
