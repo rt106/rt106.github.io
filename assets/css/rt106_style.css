@@ -2,7 +2,8 @@
   border: 0px;
   box-shadow: 0 0 0px;
   -webkit-box-shadow: 0 0 0px;
-  vertical-align: text-bottom;
+  vertical-align: middle;
+  float: left;
 }
 
 #project_tagline {
