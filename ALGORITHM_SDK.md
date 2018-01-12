@@ -162,11 +162,11 @@ Add a service to the Docker Compose file to add your algorithm, e.g.
 ```
 There are a multiple options for organizing your Docker Compose file(s).  First, your application could have a single docker-compose.yml file which simplifies launching your Rt 106 environment
 ```bash
-docker-compose up
+$ docker-compose up
 ```
 Another option is to use multiple Docker Compose files, for example, one that configures the core Rt 106 environment and a second that configures the algorithms you wish to use
 ```bash
-docker-compose -f docker-compose.yml -f docker-compose.myapp.yml up
+$ docker-compose -f docker-compose.yml -f docker-compose.myapp.yml up
 ```
 Complete documentation for Docker Compose can be found [here](https://docs.docker.com/compose/)
 
