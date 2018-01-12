@@ -62,9 +62,9 @@ These are the CSS styles specific for your application to supplement the CSS sty
 ### Building your application
 
 #### Template files
-The seed application files may need to be modified as noted below.
+Below are the files from the seed application that may need to be modified for a new application:
 
-|File|Need to Modify?|
+|File||
 |----|---------------|
 |.bowerrc|Used to tell bower where to install packages. No changes usually needed.|
 |.dockerignore|Modify as needed, add any files that should never be included in the Docker image.|
