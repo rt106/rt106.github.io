@@ -53,7 +53,7 @@ Docker is a pervasive open-source containerization technology.  General document
 
 Create a Dockerfile to construct your Rt 106 Docker container. See the [Docker](https://docs.docker.com/engine/reference/builder/) documentation for general details on Dockerfiles. An example Dockerfile from the [simple region growing](https://github.com/rt106/rt106-simple-region-growing) example algorithm is below:
 
-```
+```dockerfile
 # Copyright (c) General Electric Company, 2017.  All rights reserved.
 
 FROM rt106/rt106-algorithm-sdk
@@ -119,7 +119,7 @@ Modify rt106SpecificAdaptorCode.py (copied above to your algorithm's directory),
 
 Please refer to the supplied examples in _rt106-algorithm-sdk_, _simple-region-growing_, and _wavelet-nuclear-segmentation_.  You must implement the Python function
 
-```
+```python
 run_algorithm(datastore, context)
 ```
 
@@ -129,7 +129,7 @@ __context__ is an object that contains all the _parameters_ that you defined in 
 
 _run_algorithm_ should return a Python object (JSON structure) that includes the result data and execution status.  The last line of the function will likely look something like this:
 
-```
+```python
 return { 'result' : result_context, 'status' : status }
 ```
 
@@ -149,7 +149,7 @@ Docker Compose can be used to launch the entire Rt 106 environment, including yo
 
 Add a service to the Docker Compose file to add your algorithm, e.g.
 
-```
+```yaml
   myalgorithm:
     image: rt206/my-algorithm:latest
     ports:
@@ -161,11 +161,11 @@ Add a service to the Docker Compose file to add your algorithm, e.g.
 
 ```
 There are a multiple options for organizing your Docker Compose file(s).  First, your application could have a single docker-compose.yml file which simplifies launching your Rt 106 environment
-```
+```bash
 docker-compose up
 ```
 Another option is to use multiple Docker Compose files, for example, one that configures the core Rt 106 environment and a second that configures the algorithms you wish to use
-```
+```bash
 docker-compose -f docker-compose.yml -f docker-compose.myapp.yml up
 ```
 Complete documentation for Docker Compose can be found [here](https://docs.docker.com/compose/)
