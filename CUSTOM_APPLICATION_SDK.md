@@ -1,18 +1,18 @@
 # Create a custom application using Rt 106
 
 You can create a custom application using Rt 106 in three different ways, listed here in increasing level of customization and effort required:
-* __Add your own algorithms to Rad-Seed or Path-Seed.__  Rt 106 provides bare-bones applications for radiology and for pathology.  You can load your own data and integrate your own algorithms and work with these seed applications as they are.  This may be useful at least for initial testing and experiments.  
+* __Add your own algorithms to [Rad-Seed](https://github.com/rt106/rt106-rad-seed) or [Path-Seed](https://github.com/rt106/rt106-path-seed).__  Rt 106 provides bare-bones applications for radiology and for pathology.  You can load your own data and integrate your own algorithms and work with these seed applications as they are.  This may be useful at least for initial testing and experiments.  
 * __Build your own AngularJS app using the provided rt106-app AngularJS services.__  You can use the very powerful [AngularJS](https://angularjs.org/) framework for building a custom app.  Much of the functionality of Rt 106 is available through rt106-app.  There is also a detailed REST API available through rt106-server for still more control of the Rt 106 platform.
 * __Build your own custom app using any tech stack you choose, using the provided rt106-server REST API.__  This is the most challenging approach but gives complete flexibility to the kind of application you would like to build.
 
 The Rt 106 Reference Guide provides a complete listing of the REST APIs available from rt106-server and the AngularJS services available from rt106-app.
 
-The examples provided with the source release (e.g. rt106-rad-seed, rt106-path-seed) follow the second approach, leveraging AngularJS.  This document provides a guide to building your own custom application using this approach.
+The examples provided with the source release (e.g. [rt106-rad-seed](https://github.com/rt106/rt106-rad-seed), [rt106-path-seed](https://github.com/rt106/rt106-path-seed)) follow the second approach, leveraging AngularJS.  This document provides a guide to building your own custom application using this approach.
 
 
 ## Creating a custom application in AngularJS leveraging rt106-app
 
-The easiest approach is to start with a copy of rt106-rad-seed or rt106-path-seed, depending on whether you are developing an application for radiology or pathology.  These two seed projects are structurally similar.
+The easiest approach is to start with a copy of [rt106-rad-seed](https://github.com/rt106/rt106-rad-seed) or [rt106-path-seed](https://github.com/rt106/rt106-path-seed), depending on whether you are developing an application for radiology or pathology.  These two seed projects are structurally similar.
 
 ### Development
 Within either of the seed applications, there are just a small number of source files for you to modify.
@@ -23,7 +23,7 @@ This file loads the appropriate style sheets, Rt 106 components, and third-party
 
 Bootstrap v4 is used to structure the web-based user interface.  index.html should be straightforward to understand given familiarity with AngularJS and Bootstrap.
 
-The structure of the rt106-rad-seed index.html file is:
+The structure of the [rt106-rad-seed](https://github.com/rt106/rt106-rad-seed) [index.html](https://github.com/rt106/rt106-rad-seed/blob/master/rt106-app/index.html) file is:
 * Load CSS style sheets.
 * Declare AngularJS controller.
 * Display navigation bar.
@@ -39,11 +39,11 @@ The structure of the rt106-rad-seed index.html file is:
 
 From this starting point, you can of course use standard HTML / CSS / AngularJS code to evolve the user interface any way you would like.
 
-JavaScript functions called from rt106-app/index.html are defined in the controller script, described in the next section.
+JavaScript functions called from [rt106-app/index.html](https://github.com/rt106/rt106-rad-seed/blob/master/rt106-app/index.html)  are defined in the controller script, described in the next section.
 
 #### rt106-app/controllers/rt106*Controller.js
 
-This file is the AngularJS controller and includes functions that are called by the HTML page above.  The code in this file calls the Rt 106 AngularJS services and REST API which are documented in REFERENCE.md.
+This file is the AngularJS controller and includes functions that are called by the HTML page above.  The code in this file calls the Rt 106 AngularJS services and REST API which are documented in [REFERENCE.md]().
 
 As a staring point, the structure of this file is as follows.  It can be modified as required to suit the needs of your application.
 * Some required header lines.
