@@ -120,7 +120,7 @@ Modify rt106SpecificAdaptorCode.py (copied above to your algorithm's directory),
 Please refer to the supplied examples in _rt106-algorithm-sdk_, _simple-region-growing_, and _wavelet-nuclear-segmentation_.  You must implement the Python function
 
 ```python
-run_algorithm(datastore, context)
+def run_algorithm(datastore, context):
 ```
 
 __datastore__ is an object that provides a number of functions for accessing the Rt 106 datastore.  Please refer to REFERENCE.md for its API.
