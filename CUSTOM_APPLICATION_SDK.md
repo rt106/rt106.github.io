@@ -23,7 +23,7 @@ This file loads the appropriate style sheets, Rt 106 components, and third-party
 
 Bootstrap v4 is used to structure the web-based user interface.  index.html should be straightforward to understand given familiarity with AngularJS and Bootstrap.
 
-The structure of the [rt106-rad-seed](https://github.com/rt106/rt106-rad-seed) [index.html](https://github.com/rt106/rt106-rad-seed/blob/master/rt106-app/index.html) file is:
+The structure of the [rt106-rad-seed/rt106-app/index.html](https://github.com/rt106/rt106-rad-seed/blob/master/rt106-app/index.html) file is:
 * Load CSS style sheets.
 * Declare AngularJS controller.
 * Display navigation bar.
@@ -43,7 +43,7 @@ JavaScript functions called from [rt106-app/index.html](https://github.com/rt106
 
 #### rt106-app/controllers/rt106*Controller.js
 
-This file is the AngularJS controller and includes functions that are called by the HTML page above.  The code in this file calls the Rt 106 AngularJS services and REST API which are documented in [REFERENCE.md]().
+This file is the AngularJS controller and includes functions that are called by the HTML page above.  The code in this file calls the Rt 106 AngularJS services and REST API which are documented in [Rt 106 API Rthe eference](REFERENCE.md).
 
 As a staring point, the structure of this file is as follows.  It can be modified as required to suit the needs of your application.
 * Some required header lines.
