@@ -66,12 +66,12 @@ The seed application files may need to be modified as noted below.
 
 |File|Need to Modify?|
 |----|---------------|
-|.bowerrc|Used to tell bower where to install packages.|
-|.dockerignore|Add any files that you do not want included in a Docker image.|
+|.bowerrc|Used to tell bower where to install packages. No changes usually needed.|
+|.dockerignore|Modify as needed, add any files that should never be included in the Docker image.|
 |.gitignore|Modify as needed.|
-|bower.json|Modify as needed to update applicatio  metadata and dependencies (Javascript libraries).|
-|docker-compose.yml|Modify to set the name for your application and to specify the algorithms to use.|
-|Dockerfile|Modify if the application needs additional libraries to be installed.|
+|bower.json|Modify as needed to update application metadata and dependencies (Javascript libraries).|
+|docker-compose.yml|Modify to set the name of the application and to specify the algorithms to use.|
+|Dockerfile|Modify as needed - install additional libraries or to copy files to different locations.|
 |entrypoint.sh|No changes usually needed.|
 |package.json|Modify as needed to update application metadata and dependencies.|
 |README.md|Update to document the application.|
