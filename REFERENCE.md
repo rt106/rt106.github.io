@@ -126,7 +126,7 @@ In the descriptions below, a term in the REST API preceded by a colon indicates 
   * Description:  Request an algorithm execution.
   * Returns:  Status of successfully receiving and queuing the request.
   * Payload: JSON structure specifying the algorithm to run and its context, such as this example:
-```
+```json
 {
   "analyticId": {
     "name":"algorithm-template--v1_0_0",
@@ -587,7 +587,7 @@ Return a JSON structure describing all available algorithms including their clas
 A JavaScript promise is returned.
 
 ##### Usage
-```
+```javascript
 analyticsFactory.getAnalytics().then(function(analytics) {
   // save or manipulate the analytics variable
 });
@@ -606,7 +606,7 @@ A JavaScript promise is returned.
 
 
 ##### Usage
-```
+```javascript
 cohortFactory.getPatients().then(function(patients) {
   // save or manipulate list of patients
 })
@@ -626,7 +626,7 @@ Get the list of studies for a patient.
 A JavaScript promise is returned.
 
 ##### Usage
-```
+```javascript
 cohortFactory.getStudies(patient).then(function(studies) {
   // save or manipulate list of studies
 })
@@ -648,7 +648,7 @@ Get the list of series for a patient and study.
 A JavaScript promise is returned.
 
 ##### Usage
-```
+```javascript
 cohortFactory.getSeries(patient, study).then(function(series) {
   // save or manipulate list of series
 })
