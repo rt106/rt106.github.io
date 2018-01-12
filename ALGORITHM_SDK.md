@@ -158,7 +158,6 @@ Add a service to the Docker Compose file to add your algorithm, e.g.
       MSG_SYSTEM: amqp
       SERVICE_NAME: myalgorithm--v1_0_0
       SERVICE_TAGS: analytic
-
 ```
 There are a multiple options for organizing your Docker Compose file(s).  First, your application could have a single docker-compose.yml file which simplifies launching your Rt 106 environment
 ```bash
