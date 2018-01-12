@@ -1,6 +1,6 @@
 # Rt 106 Programming Reference
 
-This document accompanies the higher-level descriptions found in __ALGORITHM_SDK.md__ and __CUSTOM_APPLICATION_SDK.md__, and provides more detailed programming information.
+This document accompanies the higher-level descriptions found in the [Algorithm SDK](ALGORITHM_SDK.md) and the [Application SDK](CUSTOM_APPLICATION_SDK.md), and provides more detailed programming information.
 
 This document describes the following:
 * JSON Metadata for Integrating Algorithms
