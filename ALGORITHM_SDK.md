@@ -1,4 +1,4 @@
-# How to add your own algorithms to Rt 106
+# Adding algorithms to Rt 106
 Rt 106 makes it easy to add your own algorithms.  The procedure for adding an algorithm would be expected to take 2-3 hours, depending on the complexity of your algorithm.
 
 (If your algorithm follows a vastly different paradigm or workflow than has previous been integrated into the Rt 106 platform, requiring changes to the platform itself, the process may take longer.)
@@ -33,7 +33,7 @@ These steps are described below.  Rt 106 includes two complete examples:
 * [simple region growing](https://github.com/rt106/rt106-simple-region-growing) - an example for medical imaging / radiology
 * [wavelet-based nuclear segmentation](https://github.com/rt106/rt106-wavelet-nuclei-segmentation) - an example for pathology / microscopy
 
-## What types of algorithms are appropriate for Rt 106?
+## What types of algorithms can be added to Rt 106?
 Rt 106 is intended for algorithms that execute in batch mode.  In other words, the algorithms are expected to receive inputs and parameters and to produce outputs, but should not have interactive / user interface code intermixed with the algorithm.
 
 Rt 106 can be used to create interactive *applications* by building the interactive elements into a custom user interface.  The algorithms themselves should still be structured as batch algorithms having no user interfaces of their own.
@@ -48,11 +48,10 @@ A subset of files from the [rt106-algorithm-sdk](https://github.com/rt106/rt106-
 * entrypoint.sh [optional, if no changes are needed from SDK version]
 
 ## 2. Create an algorithm container
+This guide describes the specific details of creating your algorithm's Docker container for Rt 106.
 Docker is a pervasive open-source containerization technology.  General documentation for Docker is available from [Docker's website](https://docs.docker.com/).
 
-This guide describes the specific details of creating your algorithm's Docker container for Rt 106.
-
-Create a Dockerfile to create your Rt 106 Docker container. See the [Docker](https://docs.docker.com/engine/reference/builder/) documentation for general details on Dockerfiles. An example Dockerfile from the [simple region growing](https://github.com/rt106/rt106-simple-region-growing) example algorithm is below:
+Create a Dockerfile to construct your Rt 106 Docker container. See the [Docker](https://docs.docker.com/engine/reference/builder/) documentation for general details on Dockerfiles. An example Dockerfile from the [simple region growing](https://github.com/rt106/rt106-simple-region-growing) example algorithm is below:
 
 ```
 # Copyright (c) General Electric Company, 2017.  All rights reserved.
@@ -81,7 +80,7 @@ EXPOSE 7106
 # entry point
 CMD ["/rt106/entrypoint.sh"]
 ```
-A few aspects of the Dockerfile are required:
+Notes:
 * The base image for all Rt 106 algorithm containers is rt106/rt106-algorithm-sdk.  This base image contains the generic adaptor described above, and also a Python environment.
 * rt106SpecificAdaptorCode.py and rt106SpecificAdaptorDefinitions.json are the files from the SDK, which you will modify below.
 * The WORKDIR should be /rt106 as shown.
@@ -93,11 +92,11 @@ For algorithms implemented as Python scripts, you may be able to simply copy you
 * ADD simpleRegionGrowing.tar.gz /rt106/bin
 
 ## 3. Define algorithm metadata
-There is certain metadata about your algorithm that you need to specify.  Much of this metadata describes the parameters, inputs, and outputs for your algorithm. This metadata is also used to automatically generate a default user interface for your algorithm. You also have the flexibility to create a custom, specialized user interface if that is appropriate for your application.  Doing so does require some custom implementation of the front end of your application.
+You need to specify a bit of metadata for your algorithm.  Much of this metadata describes the parameters, inputs, and outputs for your algorithm. This metadata is also used to automatically generate a default user interface for your algorithm. You also have the flexibility to create a custom, specialized user interface if that is appropriate for your application.  Doing so does require a custom front end for your application.
 
-The metadata approach borrows heavily from the approach used in [3D Slicer](https://www.slicer.org/), although the web technologies used are more up-to-date (e.g. JSON rather than XML).
+The metadata approach borrows heavily from the approach used in [3D Slicer](https://www.slicer.org/), although Rt 106 uses more modern web technologies (e.g. JSON rather than XML).
 
-Metadata required for an algorithm includes:
+Metadata for an algorithm includes:
 * name
 * version
 * queue name
@@ -106,7 +105,7 @@ Metadata required for an algorithm includes:
 * results
 * display
 
-This metadata is documented using a JSON format in rt106SpecificAdaptorDefinitions.json.  Several examples are provided in _rt106-algorithm-sdk_, _simple-region-growing_, and _wavelet-nuclear-segmentation_.  Please refer to these as a starting point for your own algorithm's metadata.
+This metadata is documented using a JSON format in rt106SpecificAdaptorDefinitions.json.  Several examples are provided in _rt106-algorithm-sdk_, _simple-region-growing_, and _wavelet-nuclear-segmentation_.  Please refer to these as a starting point for your own algorithm's metadata. A [JSON schema](https://raw.githubusercontent.com/rt106/rt106-frontend/master/rt106-server/algorithmDescriptionSchema.json) is under development.
 
 Please refer to [REFERENCE.md]() for a detailed description of all the JSON metadata fields for algorithm integration.
 
