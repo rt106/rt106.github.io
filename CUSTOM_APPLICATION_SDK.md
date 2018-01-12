@@ -1,6 +1,6 @@
-# How to Create Your Own Custom Application using Rt 106
+# Create a custom application using Rt 106
 
-Rt 106 enables you to create your own custom application in three different ways, listed here in increasing level of customization and effort required:
+You can create a custom application using Rt 106 in three different ways, listed here in increasing level of customization and effort required:
 * __Add your own algorithms to Rad-Seed or Path-Seed.__  Rt 106 provides bare-bones applications for radiology and for pathology.  You can load your own data and integrate your own algorithms and work with these seed applications as they are.  This may be useful at least for initial testing and experiments.  
 * __Build your own AngularJS app using the provided rt106-app AngularJS services.__  You can use the very powerful [AngularJS](https://angularjs.org/) framework for building a custom app.  Much of the functionality of Rt 106 is available through rt106-app.  There is also a detailed REST API available through rt106-server for still more control of the Rt 106 platform.
 * __Build your own custom app using any tech stack you choose, using the provided rt106-server REST API.__  This is the most challenging approach but gives complete flexibility to the kind of application you would like to build.
@@ -84,7 +84,7 @@ The Docker image for your custom front end needs to be built using a line simila
 #### Running the System
 
 Assuming that you have access to the Rt 106 system, such as through Dockerhub, you should be able to run your system by simply executing:
-```
-docker-compose up
+```bash
+$ docker-compose up
 ```
 And then pointing a web browser (Chrome recommended) to [localhost:81](http://localhost:81).
