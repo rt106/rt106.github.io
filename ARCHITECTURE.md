@@ -36,4 +36,4 @@ Each algorithm in Rt 106 has a job queue (currently based on [RabbitMQ](https://
 
 ## Service Discovery
 
-Rt 106 uses Service Discovery to manage a dynamic catalog of algorithms.  Service Discovery allows for algorithms to be added, removed, and versions in a Rt 106 deployment without system administration of ```rt106-server```.  Rt 106 uses [Consul](https://www.consul.io/) and [Registrator](http://gliderlabs.github.io/registrator/latest/) to support Service Discovery.
+Rt 106 uses Service Discovery to manage a dynamic catalog of algorithms.  Service Discovery allows for algorithms to be added, removed, and versioned in a Rt 106 deployment without system administration of ```rt106-server```.  Rt 106 uses [Consul](https://www.consul.io/) and [Registrator](http://gliderlabs.github.io/registrator/latest/) to support Service Discovery.
