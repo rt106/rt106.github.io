@@ -41,7 +41,19 @@ $ docker-compose -f docker-compose.yml -f docker-compose.dev.yml up
 $ docker-compose -f docker-compose.yml -f docker-compose.dev.yml down
 ```
 
-It will take a few minutes for the demonstration data to download.  Once downloaded, there will be two patients listed - Adam and Eve.  Once the data is downloaded, you can edit the ```docker-compose.dev.yml``` file and set ```DOWNLOAD_DEMO_DATA``` to ```off``` to skip this step in the future.
+It will take a few minutes for the demonstration data to download. Unfortunately, the status of the download is not yet displayed on the user interface.  Refresh to see if the demonstration data has completed downloading. Once downloaded, there will be two patients listed - Adam and Eve.  Once the data is downloaded, you can edit the ```docker-compose.dev.yml``` file and set ```DOWNLOAD_DEMO_DATA``` to ```off``` to skip this step in the future.
+
+If your host computer sits behind a proxy server, you may need to modify the ```docker-compose.dev.yml``` file as below to
+configure the ```rt106-datastore``` to route through the proxy server in order to download the demonstration data.
+```yml
+# tell the datastore to download a set of demonstration data
+datastore:
+  environment:
+    DOWNLOAD_RAD_DEMO_DATA: "on"
+    http_proxy: url_for_proxy_server
+    https_proxy: url_for_secure_proxy_server
+    no_proxy: list_of_hosts_to_skip_proxy_server
+```
 
 
 ## For more information
