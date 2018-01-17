@@ -41,7 +41,7 @@ $ docker-compose -f docker-compose.yml -f docker-compose.dev.yml up
 $ docker-compose -f docker-compose.yml -f docker-compose.dev.yml down
 ```
 
-It will take a few minutes for the demonstration data to download.  Once downloaded, you will two patients listed Adam and Eve.  Once the data is downloaded you can edit the ```docker-compose.dev.yml``` file and set ```DOWNLOAD_DEMO_DATA``` to ```off``` to skip this step in the future.
+It will take a few minutes for the demonstration data to download.  Once downloaded, there will be two patients listed - Adam and Eve.  Once the data is downloaded, you can edit the ```docker-compose.dev.yml``` file and set ```DOWNLOAD_DEMO_DATA``` to ```off``` to skip this step in the future.
 
 
 ## For more information
