@@ -21,11 +21,11 @@ LOCAL_DATA_DIR=path_to_where_bulk_data_can_be_stored
 ```yml
 version: '3'
 services:
-# configure the Rt 106 web serve to serve a small demo application
+  # configure the Rt 106 web serve to serve a small demo application
   web:
     environment:
       Rt106_SERVE_APP: ${Rt106_SERVE_APP}
-# tell the datastore to download a set of demonstration data
+  # tell the datastore to download a set of demonstration data
   datastore:
     environment:
       DOWNLOAD_RAD_DEMO_DATA: "on"
