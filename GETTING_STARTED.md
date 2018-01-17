@@ -18,7 +18,7 @@ LOCAL_DATA_DIR=path_to_where_bulk_data_can_be_stored
 ```
 ```Rt106_SERVE_APP``` is used configure the Rt 106 web server to serve a small demonstration application. ```LOCAL_DATA_DIR``` is used to configure a ```rt106-datastore``` to use the host filesystem to store images and other bulk data.
 4. Create a file ```docker-compose.dev.yml``` next to the ```docker-compose.yml``` that contains
-```yml
+```
 version: '3'
 services:
   # configure the Rt 106 web serve to serve a small demo application
