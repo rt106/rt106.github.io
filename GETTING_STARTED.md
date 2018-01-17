@@ -2,22 +2,21 @@
 
 Rt 106 is a [Docker](https://www.docker.com/)-based system with a micro-service architecture.  The simplest
 way to get up and running is with a single host setup using Docker Compose. This
-type of setup support Linux, Mac OS X, and Windows 10. We recommend using [Docker for Mac](https://www.docker.com/docker-mac)
-and [Docker for Windows](https://www.docker.com/docker-windows) on these platforms. The older Docker Toolbox is not supported.
+type of setup supports Linux, Mac OS X, and Windows 10. We recommend using [Docker for Mac](https://www.docker.com/docker-mac)
+and [Docker for Windows](https://www.docker.com/docker-windows) on the Mac and Windows platforms. The older Docker Toolbox is not supported.
 
 1. Install Docker and Docker Compose on the host computer.
-2. Install the example [Rt 106 Docker-compose script](https://raw.githubusercontent.com/rt106/rt106/master/docker-compose.yml).
-
+2. Install the example [Rt 106 Docker-compose script](https://raw.githubusercontent.com/rt106/rt106/master/docker-compose.yml). This script can be installed
+using Git.
 ```bash
 $ git clone https://github.com/rt106/rt106.git
 ```
-
-3. Create a file ```.env``` next to the ```docker-compose.yml``` in the rt106 directory. The contents of the ```.env``` file should be
+3. Create a file ```.env``` next to the ```docker-compose.yml``` in the ```rt106``` directory. The contents of the ```.env``` file should be
 ```
 Rt106_SERVE_APP=public
 LOCAL_DATA_DIR=path_to_where_bulk_data_can_be_stored
 ```
-```Rt106_SERVE_APP`` is used configure the Rt 106 web server to serve a small demonstration application. ```LOCAL_DATA_DIR``` is used to configure a ```rt106-datastore``` to use the host filesystem to store images and other bulk data.
+```Rt106_SERVE_APP``` is used configure the Rt 106 web server to serve a small demonstration application. ```LOCAL_DATA_DIR``` is used to configure a ```rt106-datastore``` to use the host filesystem to store images and other bulk data.
 4. Create a file ```docker-compose.dev.yml``` next to the ```docker-compose.yml``` that contains
 ```yml
 version: '3'
@@ -36,7 +35,7 @@ This configures Rt 106 to serve a small demonstration application.  It also tell
 ```bash
 $ docker-compose -f docker-compose.yml -f docker-compose.dev.yml up
 ```
-6. Point a browser at [http://localhost:80]
+6. Point a browser at [http://localhost:80](http://localhost:80)
 7. To stop the Rt 106 system
 ```bash
 $ docker-compose -f docker-compose.yml -f docker-compose.dev.yml down
