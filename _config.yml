@@ -4,6 +4,6 @@ title: Rt 106
 description: A scalable, containerized analytic and application framework for creating interactive web applications around long running (batch style) analytics.
 show_downloads: false
 google_analytics: UA-112371999-1
-markdown:    kramdown
+markdown: kramdown
 kramdown:
-  input:          GFM
+  input: GFM
