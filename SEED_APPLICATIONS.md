@@ -4,8 +4,8 @@ Two examples applications are provided to illustrate one of the mechanisms
 for building a custom application that using a Rt 106 backend to manage data,
 algorithms, and algorithm executions.
 
-* [https://github.com/rt106/rt106-rad-seed](rt106-rad-seed) - a radiology style application based on processing DICOM images
-* [https://github.com/rt106/rt106-path-seed](rt106-path-seed) - pathology research style application based on processing multi-channel microscopy images
+* [rt106-rad-seed](https://github.com/rt106/rt106-rad-seed) - a radiology style application based on processing DICOM images
+* [rt106-path-seed](https://github.com/rt106/rt106-path-seed) - pathology research style application based on processing multi-channel microscopy images
 
 # Running a seed application
 
