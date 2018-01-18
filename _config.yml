@@ -7,3 +7,4 @@ google_analytics: UA-112371999-1
 markdown: kramdown
 kramdown:
   input: GFM
+  syntax_highlighter: rouge
