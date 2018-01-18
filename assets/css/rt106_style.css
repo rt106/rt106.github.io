@@ -14,12 +14,16 @@
     clear:both;
 }
 
+pre, code {
+  background-color: #f6f8fa;
+  box-shadow: none; 
+}
+
 .highlight pre {
   padding-top: 0px;
   padding-bottom: 0px;
   padding-left: 0px;
   padding-right: 0px;
-  background-color: #f6f8fa;
 }
 
 .highlight code {
@@ -27,7 +31,6 @@
   padding-bottom: 16px;
   padding-left: 16px;
   padding-right: 16px;
-
 }
 
 #main_content_wrap.outer {
