@@ -4,6 +4,7 @@ Rt 106 is a scalable, containerized analytics and application framework for crea
 # Documentation
 * [Architecture](ARCHITECTURE.md) - Key Rt 106 concepts and designs
 * [Getting started](GETTING_STARTED.md) - Quickly run an example Rt 106 system
+* [Example applications](SEED_APPLICATIONS.md) - Example applications for radiology and pathology research that use a Rt 106 backend
 * [Algorithm SDK](ALGORITHM_SDK.md) - How to build a container around an algorithm that interfaces with Rt 106
 * [Custom Application SDK](CUSTOM_APPLICATION_SDK.md) - How to build a custom user experience in front of Rt 106
 * [API Reference](REFERENCE.md) - Full API reference
