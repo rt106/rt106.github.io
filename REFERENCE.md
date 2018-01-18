@@ -126,19 +126,19 @@ In the descriptions below, a term in the REST API preceded by a colon indicates 
   * Description:  Request an algorithm execution.
   * Returns:  Status of successfully receiving and queuing the request.
   * Payload: JSON structure specifying the algorithm to run and its context, such as this example:
-```json
-{
-  "analyticId": {
-    "name":"algorithm-template--v1_0_0",
-    "version":"v1.0.0"
-  },
-  "context":{
-    "inputSeries":"/Patients/pat004/Primary/Imaging/studyD/spine_Anonymous360_PURE",
-    "seedPoint":[0,0,0],
-    "threshold":0
-  }
-}
-```
+    ```json
+    {
+      "analyticId": {
+        "name":"algorithm-template--v1_0_0",
+        "version":"v1.0.0"
+      },
+      "context":{
+        "inputSeries":"/Patients/pat004/Primary/Imaging/studyD/spine_Anonymous360_PURE",
+        "seedPoint":[0,0,0],
+        "threshold":0
+      }
+    }
+    ```
 
 * __/v1/executions (GET)__
   * Description:  Query the rt106-server's in-memory list of algorithm executions.
