@@ -8,3 +8,7 @@ Rt 106 is a scalable, containerized analytics and application framework for crea
 * [Algorithm SDK](ALGORITHM_SDK.md) - How to build a container around an algorithm that interfaces with Rt 106
 * [Custom Application SDK](CUSTOM_APPLICATION_SDK.md) - How to build a custom user experience in front of Rt 106
 * [API Reference](REFERENCE.md) - Full API reference
+
+# Resources
+* [GitHub organization for Rt 106](https://github.com/rt106)
+* [Docker images for Rt 106](https://cloud.docker.com/swarm/rt106/repository/list)
