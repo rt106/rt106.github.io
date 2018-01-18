@@ -8,7 +8,7 @@ You can create a custom application using Rt 106 in four different ways, listed 
     Rt106_SERVE_APP=my-app
     Rt106_SERVE_DIR=path_on_host_to_app_code
     ```
-  and adding setting a volume mapping in your ```docker-compose.dev.yml``` file
+  and setting a volume mapping in your ```docker-compose.dev.yml``` file
       ```yaml
       web:
         volumes:
@@ -78,7 +78,7 @@ rt106*Styles.css are the CSS styles specific for your application to supplement 
 ### Building your application
 
 #### Template files
-Additional files that may need to be modified for your applciation: 
+Additional files that may need to be modified for your applciation:
 
 |File||
 |----|---------------|
