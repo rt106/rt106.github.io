@@ -58,6 +58,7 @@ datastore:
 
 ## For more information
 
+* [Example applications](SEED_APPLICATIONS.md) - Example applications for radiology and pathology research that use a Rt 106 backend
 * [Architecture](ARCHITECTURE.md) - Key Rt 106 concepts and designs
 * [Algorithm SDK](ALGORITHM_SDK.md) - How to build a container around an algorithm that interfaces with Rt 106
 * [Custom Application SDK](CUSTOM_APPLICATION_SDK.md) - How to build a custom user experience in front of Rt 106
