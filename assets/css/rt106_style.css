@@ -16,7 +16,8 @@
 
 pre, code {
   background-color: #f6f8fa;
-  box-shadow: none; 
+  box-shadow: none;
+  font-size: 85%;
 }
 
 .highlight pre {
