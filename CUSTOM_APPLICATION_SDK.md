@@ -1,4 +1,4 @@
-# Create a custom application using Rt 106
+# Create an application using Rt 106
 
 You can create a custom application using Rt 106 in four different ways, listed here in increasing level of customization and effort required:
 * __Add algorithms to [Rad-Seed](https://github.com/rt106/rt106-rad-seed) or [Path-Seed](https://github.com/rt106/rt106-path-seed).__  Rt 106 provides bare-bones applications for radiology and for pathology.  You can load your own data and integrate your own algorithms and work with these seed applications as they are.  This is useful for initial testing and learning about Rt 106.  
@@ -25,7 +25,7 @@ The [Rt 106 API Reference Guide](REFERENCE.md) provides a complete listing of th
 The examples provided with the source release (e.g. [rt106-rad-seed](https://github.com/rt106/rt106-rad-seed), [rt106-path-seed](https://github.com/rt106/rt106-path-seed)) follow the second variant of the second approach, serving an AngularJS application from a second web server. This document provides a guide to building your own custom application using this approach.
 
 
-## Creating a custom application in AngularJS leveraging rt106-app
+## Creating an AngularJS application with rt106-app
 
 The easiest approach is to start with a copy of [rt106-rad-seed](https://github.com/rt106/rt106-rad-seed) or [rt106-path-seed](https://github.com/rt106/rt106-path-seed), depending on whether you are developing an application for radiology or pathology.  These two seed projects are structurally similar.
 
