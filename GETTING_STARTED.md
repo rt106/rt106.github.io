@@ -30,7 +30,7 @@ LOCAL_DATA_DIR=path_to_where_bulk_data_can_be_stored
         environment:
           DOWNLOAD_RAD_DEMO_DATA: "on"
     ```
-This configures Rt 106 to serve a small demonstration application.  It also tells the ```rt106-datastore``` to download a set up demonstration data from the [Visible Human Project](https://www.nlm.nih.gov/research/visible/visible_human.html).
+This configures Rt 106 to serve a small demonstration application.  It also tells the ```rt106-datastore``` to download a set of demonstration data from the [Visible Human Project](https://www.nlm.nih.gov/research/visible/visible_human.html).
 5. Run Rt 106
 ```bash
 $ docker-compose -f docker-compose.yml -f docker-compose.dev.yml up

@@ -201,7 +201,7 @@ volumes:
 ### Seed application
 
 The seed applications provide there own web server to serve the application. This web server
-serves the HTML and Javascript content for the application while using the standard Rt 106 web server to access
+serves the HTML, Javascript, CSS and other web resource content for the application while using the standard Rt 106 web server to access
 the Rt 106 platform REST endpoints.
 
 ```yaml
