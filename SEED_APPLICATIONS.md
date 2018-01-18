@@ -1,11 +1,11 @@
 # Seed applications
 
-Two examples applications are provided to illustrate one of the mechanisms
-for building a custom application that using a Rt 106 backend to manage data,
-algorithms, and algorithm executions.
+Two example applications are provided to illustrate one of the mechanisms
+for building a custom application that uses a Rt 106 backend to manage data,
+algorithms, and algorithm executions:
 
-* [rt106-rad-seed](https://github.com/rt106/rt106-rad-seed) - a radiology style application based on processing DICOM images
-* [rt106-path-seed](https://github.com/rt106/rt106-path-seed) - pathology research style application based on processing multi-channel microscopy images
+* [rt106-rad-seed](https://github.com/rt106/rt106-rad-seed) - a radiology style application based on processing DICOM images,
+* [rt106-path-seed](https://github.com/rt106/rt106-path-seed) - pathology research style application based on processing multi-channel microscopy images.
 
 ## Running a seed application
 
@@ -14,11 +14,11 @@ A seed application can be run using one of the Docker Compose files
 * [rt106-rad-seed](https://raw.githubusercontent.com/rt106/rt106-rad-seed/master/docker-compose.yml)
 * [rt106-path-seed](https://raw.githubusercontent.com/rt106/rt106-path-seed/master/docker-compose.yml)
 
-As when running the built in demonstration application in [Getting Started](GETTING_STARTED.md), create an ```.env``` file containing the path to bulk data
+As when running the built-in demonstration application described in [Getting Started](GETTING_STARTED.md), create an ```.env``` file containing the path to bulk data
 ```
 LOCAL_DATA_DIR=path_to_where_bulk_data_can_be_stored
 ```
-Note: in this ```.env``` file, we are not setting ```Rt106_SERVE_APP``` since the Rt 106 Node.js does not need to serve an application itself.  A separate Node.js server is serving the seed application.
+Note: in this ```.env``` file, we are not setting ```Rt106_SERVE_APP``` since the Rt 106 Node.js server does not need to serve an application itself. It just needs to serve the REST endpoints for the Rt 106 platform.  In this example, a separate Node.js server is serving the seed application.
 
 To start the seed application
 ```bash
@@ -144,10 +144,10 @@ registrator:
 
 The base Rt 106 services include
 
-* RabbitMQ for managing work queues. There is one queue per algorithm
+* RabbitMQ for managing work queues, with two queues per algorithm (request and response)
 * MySQL for tracking provenance of algorithm executions
 * Datastore for managing bulk data
-* Web server providing REST endpoints for applications
+* Web server providing platform REST endpoints to applications
 
 See the [Rt 106 Architecture](ARCHITECTURE.md) for more information.
 
@@ -201,8 +201,8 @@ volumes:
 ### Seed application
 
 The seed applications provide there own web server to serve the application. This web server
-serves the HTML and Javascript content for the application while using the standard Rt 106 web server for
-the Rt 106 REST endpoints.
+serves the HTML and Javascript content for the application while using the standard Rt 106 web server to access
+the Rt 106 platform REST endpoints.
 
 ```yaml
 # web server for seed app can scale if placed behind a load balancer
