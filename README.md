@@ -12,4 +12,4 @@ Rt 106 is a scalable, containerized analytics and application framework for crea
 # Resources
 * [GitHub organization for Rt 106](https://github.com/rt106)
 * [Docker images for Rt 106](https://cloud.docker.com/swarm/rt106/repository/list)
-* [License for Rt 106](LICENSE)
+* [License for Rt 106](https://github.com/rt106/rt106/blob/master/LICENSE)
