@@ -54,7 +54,7 @@ datastore:
     https_proxy: url_for_secure_proxy_server
     no_proxy: list_of_hosts_to_skip_proxy_server
 ```
-
+<img src="/assets/images/Rt106_demo_screenshot.png"/>
 
 ## For more information
 
