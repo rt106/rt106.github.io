@@ -107,7 +107,7 @@ Metadata for an algorithm includes:
 
 This metadata is documented using a JSON format in rt106SpecificAdaptorDefinitions.json.  Several examples are provided in _rt106-algorithm-sdk_, _simple-region-growing_, and _wavelet-nuclear-segmentation_.  Please refer to these as a starting point for your own algorithm's metadata. A [JSON schema](https://raw.githubusercontent.com/rt106/rt106-frontend/master/rt106-server/algorithmDescriptionSchema.json) is under development.
 
-Please refer to [REFERENCE.md](https://github.com/rt106/rt106.github.io/blob/master/REFERENCE.md) for a detailed description of all the JSON metadata fields for algorithm integration.
+Please refer to [Rt 106 API Reference Guide](REFERENCE.md) for a detailed description of all the JSON metadata fields for algorithm integration.
 
 ## 4. Write a short wrapper script
 
