@@ -45,7 +45,7 @@ Rt 106 places no constraints on the implementation language for an algorithm.  A
 A subset of files from the [rt106-algorithm-sdk](https://github.com/rt106/rt106-algorithm-sdk) are needed.  Clone the rt106-algorithm-sdk repository and copy the following files into the directory that contains your algorithm:
 * rt106SpecificAdaptorCode.py [required]
 * rt106SpecificAdaptorDefinitions.json [required]
-* entrypoint.sh [optional, if no changes are needed from SDK version]
+* entrypoint.sh [optional, if changes are needed from SDK version]
 
 ## 2. Create an algorithm container
 This guide describes the specific details of creating your algorithm's Docker container for Rt 106.
@@ -107,7 +107,7 @@ Metadata for an algorithm includes:
 
 This metadata is documented using a JSON format in rt106SpecificAdaptorDefinitions.json.  Several examples are provided in _rt106-algorithm-sdk_, _simple-region-growing_, and _wavelet-nuclear-segmentation_.  Please refer to these as a starting point for your own algorithm's metadata. A [JSON schema](https://raw.githubusercontent.com/rt106/rt106-frontend/master/rt106-server/algorithmDescriptionSchema.json) is under development.
 
-Please refer to [REFERENCE.md]() for a detailed description of all the JSON metadata fields for algorithm integration.
+Please refer to [REFERENCE.md](https://github.com/rt106/rt106.github.io/blob/master/REFERENCE.md) for a detailed description of all the JSON metadata fields for algorithm integration.
 
 ## 4. Write a short wrapper script
 
