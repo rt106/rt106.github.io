@@ -87,6 +87,45 @@ An important concept for Rt 106 datastores is that a __path__ is a storage locat
     * input_path: path where we would like to upload an image
     * execid: name of the pipeline execution.
   * return value: True if the input_path is available, otherwise False.
+* __datastore.get_primary_data_formats( patient, exam, element )__
+  * description:  Return the list of data formats available for a patient / exam / data element.
+  * parameters:
+    * patient: patient ID
+    * exam: exam ID
+    * element: element ID (e.g. "Imaging," etc.)
+  * return value: JSON structure containing a 'formats' element having a list of available formats.
+* __datastore.get_primary_data_path_single_file( patient, exam, element, format )__
+  * description:  Return the path and filename for a single-file patient / exam data element.
+  * parameters:
+    * patient: patient ID
+    * exam: exam ID
+    * element: element ID (e.g. "Imaging," etc.)
+    * format: format ID
+  * return value: JSON structure containing a 'path' element and a 'filename' element.
+* __datastore.get_derived_data_root_path( patient, execid, analytic )__
+  * description:  Return the root path for a patient, pipeline execution, and specific analytic.  This may be where some metadata may be stored.
+  * parameters:
+    * patient: patient ID
+    * execid: pipeline execution ID
+    * analytic: analytic that was run
+  * return value: JSON structure containing a 'path' element.
+* __datastore.get_derived_data_formats( patient, execid, analytic, result )__
+  * description:  Return the list of data formats available for a patient / pipeline execution / analytic / result data element.
+  * parameters:
+    * patient: patient ID
+    * execid: pipeline execution ID
+    * analytic: analytic that was run
+    * result: the result for the execution of the analytic
+  * return value: JSON structure containing a 'formats' element having a list of available formats.
+* __datastore.get_derived_data_path_single_file( patient, execid, analytic, result, format )__
+  * description:  Return the path and filename for a single-file result data element.
+  * parameters:
+    * patient: patient ID
+    * execid: pipeline execution ID
+    * analytic: analytic that was run
+    * result: the result for the execution of the analytic
+    * format: format ID
+  * return value: JSON structure containing a 'path' element and a 'filename' element.
 
 ### Pathology / Microscopy Data API Calls
 * __datastore.get_pathology_primary_path( slide, region, channel )__
@@ -244,6 +283,18 @@ The API calls in the section are detailed for medical imaging, using the DICOM c
   * Description:  Returns the URI path for uploading an algorithm-generated series.
   * Returns: A JSON object containing the path string.
 
+* __/v1/datastore/patients/:patient/exams/:exam/elements/:element/formats__
+  * Description:  Returns the list of data formats available for a patient / exam / data element.
+  * Returns: A JSON object containing the list of formats.
+
+* __/v1/datastore/patients/:patient/exams/:exam/elements/:element/formats/dicom/:study/:series__
+  * Description:  Get the path to DICOM data for a patient / exam / data element.
+  * Returns: A JSON object containing the path.
+
+* __/v1/datastore/patients/:patient/exams/:exam/elements/:element/formats/:format__
+  * Description:  Get the path and filename for single-file data for a patient / exam / data element / format.
+  * Returns: A JSON object containing the path and filename.
+
 * __/v1/datastore/series/:series-path/:format__
   * Description: Downloads a series.
   * Returns: A tar archive containing the series or an error code.
@@ -307,6 +358,22 @@ DICOM series.  The data need not exist for this REST call
 to succeed; it returns the path that can be used for uploading
 new data or downloading the data if it exists.
   * Returns:  A JSON structure containing the path as 'path'.
+
+* __/v1/datastore/patients/:patient/executions/:execid/analytics/:analytic/results/root__
+  * Description:  Get the root path to a result set for an algorithm execution for a patient. Metadata may be stored here.
+  * Returns:  A JSON structure containing the path.
+
+* __/v1/datastore/patients/:patient/executions/:execid/analytics/:analytic/results/:result/formats__
+  * Description:  Get the formats available for derived data resulting from algorithm execution.
+  * Returns:  A JSON structure containing the list of one or more formats.
+
+* __/v1/datastore/patients/:patient/executions/:execid/analytics/:analytic/results/:result/formats/dicom/:study/:series__
+  * Description:  Get the path to a derived (algorithm-generated) DICOM data element for a patient.
+  * Returns:  A JSON structure containing the path.
+
+* __/v1/datastore/patients/:patient/executions/:execid/analytics/:analytic/results/:result/formats/:format__
+  * Description:  Get the path to a derived (algorithm-generated) single-file data element for a patient.
+  * Returns:  A JSON structure containing the path and filename.
 
 ### REST API calls related to pathology or microscopy
 
