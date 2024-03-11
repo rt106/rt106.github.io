@@ -283,18 +283,6 @@ The API calls in the section are detailed for medical imaging, using the DICOM c
   * Description:  Returns the URI path for uploading an algorithm-generated series.
   * Returns: A JSON object containing the path string.
 
-* __/v1/datastore/patients/:patient/exams/:exam/elements/:element/formats__
-  * Description:  Returns the list of data formats available for a patient / exam / data element.
-  * Returns: A JSON object containing the list of formats.
-
-* __/v1/datastore/patients/:patient/exams/:exam/elements/:element/formats/dicom/:study/:series__
-  * Description:  Get the path to DICOM data for a patient / exam / data element.
-  * Returns: A JSON object containing the path.
-
-* __/v1/datastore/patients/:patient/exams/:exam/elements/:element/formats/:format__
-  * Description:  Get the path and filename for single-file data for a patient / exam / data element / format.
-  * Returns: A JSON object containing the path and filename.
-
 * __/v1/datastore/series/:series-path/:format__
   * Description: Downloads a series.
   * Returns: A tar archive containing the series or an error code.
@@ -315,49 +303,45 @@ The API calls in the section are detailed for medical imaging, using the DICOM c
   * Description:  Download the annotation for a series.
   * Returns: In the first release, an example, hard-coded set of annotations are returned for testing.
 
+##### Version 2 patient-related datastore calls:
+
+* __/v1/datastore/patients/:patient/exams__
+  * Description:  Returns the list of exams for the patient.
+  * Returns: A JSON object containing the list of exams.
+
+* __/v1/datastore/patients/:patient/exams/:exam/elements__
+  * Description:  Returns the list of data elements for the patient and exam.
+  * Returns: A JSON object containing the list of data elements.
+
+* __/v1/datastore/patients/:patient/exams/:exam/elements/:element/formats__
+  * Description:  Returns the list of data formats available for a patient / exam / data element.
+  * Returns: A JSON object containing the list of formats.
+
+* __/v1/datastore/patients/:patient/exams/:exam/elements/:element/formats/dicom/:study/:series__
+  * Description:  Get the path to DICOM data for a patient / exam / data element.
+  * Returns: A JSON object containing the path.
+
+* __/v1/datastore/patients/:patient/exams/:exam/elements/:element/formats/:format__
+  * Description:  Get the path and filename for single-file data for a patient / exam / data element / format.
+  * Returns: A JSON object containing the path and filename.
+
 #### REST API calls related to algorithm pipeline results
 These REST calls support querying the datastore when there
 is a pipeline of algorithms, potentially having multiple
 executions and multiple outputs per pipeline step.
 
-* __/v1/datastore/patient/:patient/results/executions__
-  * Description:  Get the list of result executions for an algorithm pipeline.
-  * Returns:  A JSON structure containing the list of 
-execution IDs as 'execids' or an error code.
 
-* __/v1/datastore/patient/:patient/results/executions/:execid__
-  * Description:  Get the list of algorithm steps that have been executed for 
-an execution ID.
-  * Returns:  A JSON structure containing the list of 
-algorithm steps as 'steps' or an error code.
+* __/v1/datastore/patients/:patient/executions__
+  * Description:  Get the list of result execution IDs for an algorithm pipeline.
+  * Returns:  A JSON structure containing the list of execution IDs.
 
-* __/v1/datastore/patient/:patient/results/executions/:execid/steps/:step/tags__
-  * Description:  Get the list of tagged output types 
-for a pipeline step (a specific algorithm) that has been executed for 
-an execution ID.
-  * Returns:  A JSON structure containing the list of 
-output tags as 'tags' or an error code.
-* __/v1/datastore/patient/:patient/results/executions/:execid/steps/:step/tags/:tag/imaging__
-  * Description:  Get the list of DICOM studies for a 
-'tagged' output type for a pipeline step that has been 
-executed for an execution ID, when the output is one or more DICOM images.
-  * Returns:  A JSON structure containing the list of 
-output DICOM 'studies' for a tag, step, execid, and patient 
-or an error code.
-* __/v1/datastore/patient/:patient/results/executions/:execid/steps/:step/tags/:tag/imaging/studies/:study/series__
-  * Description:  Get the list of DICOM series for a DICOM
-study for a 'tagged' output type for a pipeline step that has been 
-executed for an execution ID.
-  * Returns:  A JSON structure containing the list of 
-output DICOM 'series' for a study, tag, step, execid, and patient 
-or an error code.
-* __/v1/datastore/patient/:patient/results/executions/:execid/steps/:step/tags/:tag/imaging/studies/:study/series/:series__
-  * Description:  Get the result path for a 
-patient, execid, pipeline step, output tag, DICOM study, 
-DICOM series.  The data need not exist for this REST call
-to succeed; it returns the path that can be used for uploading
-new data or downloading the data if it exists.
-  * Returns:  A JSON structure containing the path as 'path'.
+* __/v1/datastore/patients/:patient/executions/:execid/analytics__
+  * Description:  Get the list of analytics (algorithms) that have been executed for an execution ID.
+  * Returns:  A JSON structure containing the list of analytics.
+
+* __/v1/datastore/patients/:patient/executions/:execid/analytics/:analytic/results__
+  * Description:  Get the list of result types that have been generated for the execution of the analytic.
+  * Returns:  A JSON structure containing the list of results.
 
 * __/v1/datastore/patients/:patient/executions/:execid/analytics/:analytic/results/root__
   * Description:  Get the root path to a result set for an algorithm execution for a patient. Metadata may be stored here.
