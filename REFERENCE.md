@@ -330,6 +330,11 @@ These REST calls support querying the datastore when there
 is a pipeline of algorithms, potentially having multiple
 executions and multiple outputs per pipeline step.
 
+For REST calls having a ":result" argument, this may be a path for cases where
+the results of an algorithm may be indexed in different ways.  For example,
+if an algorithm generates results as different features and may be run for 
+different imaging modalities, the :result may be something like "modality/feature".
+
 
 * __/v1/datastore/patients/:patient/executions__
   * Description:  Get the list of result execution IDs for an algorithm pipeline.
@@ -340,7 +345,7 @@ executions and multiple outputs per pipeline step.
   * Returns:  A JSON structure containing the list of analytics.
 
 * __/v1/datastore/patients/:patient/executions/:execid/analytics/:analytic/results__
-  * Description:  Get the list of result types that have been generated for the execution of the analytic.
+  * Description:  Get the list of result types that have been generated for the execution of the analytic.  Generally each result may be a path.  (See above.)
   * Returns:  A JSON structure containing the list of results.
 
 * __/v1/datastore/patients/:patient/executions/:execid/analytics/:analytic/results/root__
