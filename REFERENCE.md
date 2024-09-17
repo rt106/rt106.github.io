@@ -34,7 +34,7 @@ Here is a description of the individual algorithm metadata fields:
   * cells -- list of descriptions of the "cells" that contain image viewers.
     * _row_ -- which row, with first one numbered zero.
     * _column_ -- which column, with first one numbered zero.
-    * _cellType_ -- "image" (DICOM) or "pathologyImage"
+    * _cellType_ -- "image" (DICOM), "pathologyImage" or "pathologyImageRGB" (TIFF)
     * _source_ -- either "context" (input) or "result" (output)
     * _parameter_ -- name of input parameter or result, defined above
     * _cellDisplayMode_ -- "background" or "overlay"
